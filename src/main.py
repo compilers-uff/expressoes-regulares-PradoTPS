@@ -27,8 +27,10 @@ def main():
     ['q2']
   )
 
-  print(afd.accepted('aaaaabaaaa'))
+  er = ER('.(*(+(a,b)),*(b))')
 
+  # print(afd.accepted('aaaaabaaaa'))
   # print(match(ER('+(a,b)'), 'ab'))
+  er.erToAFNe()
 
 main()
