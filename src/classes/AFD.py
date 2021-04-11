@@ -10,9 +10,5 @@ class AFD:
     return True
 
   @staticmethod
-  def afnToAFD(er):
-    return AFD()
-
-  @staticmethod
   def afdToAFDmin(afd):
     return afd

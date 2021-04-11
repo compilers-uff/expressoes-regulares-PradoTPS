@@ -1,3 +1,5 @@
+from .AFD import AFD
+
 class AFN:
   def __init__(self, Sigma, Q, delta, q0, F):
     self.Sigma = Sigma
@@ -7,5 +9,5 @@ class AFN:
     self.F = F
 
   @staticmethod
-  def afneToAFN(er):
-    return AFN()
+  def afnToAFD(er):
+    return AFD()
