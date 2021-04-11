@@ -6,7 +6,19 @@ from classes.ER import ER
 from functions.matcher import match
 
 def main():
-  print(AFD())
-  print(match(ER(), "ab"))
+  print(AFD(
+    ['a','b'],
+    ['q0', 'q1', 'q2'],
+    {
+      'q0': [
+        ['a', 'q1'],
+        ['b', 'q2']
+      ]
+    },
+    'q0',
+    ['q1', 'q2']
+  ))
+
+  print(match(ER('+(a,b)'), 'ab'))
 
 main()
