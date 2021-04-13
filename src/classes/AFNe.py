@@ -17,6 +17,9 @@ class AFNe:
     print('F:', self.F)
     print('########################')
 
-  @staticmethod
-  def afneToAFN(er):
-    return AFN()
+  def afneToAFN(self):
+    afn_q0 = self.q0
+    afn_q = self.Q
+    afn_sigma = [elem for elem in self.Sigma if elem != 'E']
+
+    return AFN(afn_sigma, self.Q, self.delta, afn_q0, self.F)

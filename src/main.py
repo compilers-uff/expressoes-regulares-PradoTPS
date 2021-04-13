@@ -31,5 +31,6 @@ def main():
   er.print()
   afne = er.erToAFNe()
   afne.print()
+  afne.afneToAFN()
 
 main()
