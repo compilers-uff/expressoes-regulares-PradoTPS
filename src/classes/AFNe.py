@@ -1,12 +1,9 @@
+from .Automaton import Automaton
 from .AFN import AFN
 
-class AFNe:
+class AFNe(Automaton):
   def __init__(self, Sigma, Q, delta, q0, F):
-    self.Sigma = Sigma
-    self.Q = Q
-    self.delta = delta
-    self.q0 = q0
-    self.F = F
+    super().__init__(Sigma, Q, delta, q0, F)
 
   def print(self):
     print('\n######### AFNe #########')
