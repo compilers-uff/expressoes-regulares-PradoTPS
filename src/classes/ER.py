@@ -108,7 +108,7 @@ def _successive_concatenation_operation_AFNe(er, depth):
     successive_concatenation_f
   )
 
-def _erToAFNeRecursive(prefixed_er, depth):
+def _er_to_AFNe_recursive(prefixed_er, depth):
   initial_state = 'q0' + str(depth)
   final_state = 'qf'+ str(depth)
 
@@ -123,11 +123,11 @@ def _erToAFNeRecursive(prefixed_er, depth):
   depth = depth * 2
 
   if (prefixed_er_dict['operation'] == '+'):
-    return _union_operation_AFNe(_erToAFNeRecursive(prefixed_er_dict['left'], depth + 1), _erToAFNeRecursive(prefixed_er_dict['right'], depth + 2), depth)
+    return _union_operation_AFNe(_er_to_AFNe_recursive(prefixed_er_dict['left'], depth + 1), _er_to_AFNe_recursive(prefixed_er_dict['right'], depth + 2), depth)
   if (prefixed_er_dict['operation'] == '.'):
-    return _concatenation_operation_AFNe(_erToAFNeRecursive(prefixed_er_dict['left'], depth + 1), _erToAFNeRecursive(prefixed_er_dict['right'], depth + 2), depth)
+    return _concatenation_operation_AFNe(_er_to_AFNe_recursive(prefixed_er_dict['left'], depth + 1), _er_to_AFNe_recursive(prefixed_er_dict['right'], depth + 2), depth)
   if (prefixed_er_dict['operation'] == '*'):
-    return _successive_concatenation_operation_AFNe(_erToAFNeRecursive(prefixed_er_dict['left'], depth + 1), depth)
+    return _successive_concatenation_operation_AFNe(_er_to_AFNe_recursive(prefixed_er_dict['left'], depth + 1), depth)
 
   raise Exception('Error on recursive er to afne')
 
@@ -140,5 +140,5 @@ class ER:
     print('Prefixed ER:', self.prefixed_er)
     print('########################')
 
-  def erToAFNe(self):
-    return _erToAFNeRecursive(self.prefixed_er, 0)
+  def to_AFNe(self):
+    return _er_to_AFNe_recursive(self.prefixed_er, 0)

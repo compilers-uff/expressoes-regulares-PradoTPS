@@ -35,5 +35,5 @@ class AFD:
     return self.F.count(current_state) > 0
 
   @staticmethod
-  def afdToAFDmin(afd):
+  def to_min_AFD(afd):
     return afd

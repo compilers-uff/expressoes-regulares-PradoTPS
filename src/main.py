@@ -27,26 +27,26 @@ def main():
   #   ['q2']
   # )
 
-  afne = AFNe(
-    ['a', 'E'],
-    ['q0', 'q1'],
-    {
-      'q0': [
-        ['a', 'q0'],
-        ['E', 'q1']
-      ]
-    },
-    'q0',
-    ['q1']
-  )
-  afn = afne.afneToAFN()
-  afn.print()
-
-  # er = ER('+(a,b)')
-  # er.print()
-  # afne = er.erToAFNe()
-  # afne.print()
+  # afne = AFNe(
+  #   ['a', 'E'],
+  #   ['q0', 'q1'],
+  #   {
+  #     'q0': [
+  #       ['a', 'q0'],
+  #       ['E', 'q1']
+  #     ]
+  #   },
+  #   'q0',
+  #   ['q1']
+  # )
   # afn = afne.afneToAFN()
   # afn.print()
+
+  er = ER('+(a,b)')
+  er.print()
+  afne = er.to_AFNe()
+  afne.print()
+  afn = afne.to_AFN()
+  afn.print()
 
 main()

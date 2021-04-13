@@ -43,7 +43,7 @@ class AFNe:
 
     return [*reachable_by_epsilon, *self._get_reachable_states_by_epsilon(reachable_by_epsilon)]
 
-  def afneToAFN(self):
+  def to_AFN(self):
     afn_q0 = self.q0
     afn_q = self.Q
     afn_sigma = [elem for elem in self.Sigma if elem != 'E']

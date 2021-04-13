@@ -18,5 +18,5 @@ class AFN:
     print('#########################')
 
   @staticmethod
-  def afnToAFD(er):
+  def to_AFD(er):
     return AFD()
