@@ -27,7 +27,7 @@ def main():
     ['q2']
   )
 
-  er = ER('+(+(a,b),+(b,a))')
+  er = ER('.(+(b,a),a)')
   afne = er.erToAFNe()
   afne.print()
 

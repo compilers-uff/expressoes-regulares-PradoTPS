@@ -60,7 +60,25 @@ def _union_operation_AFNe(left_er, right_er, depth):
   )
 
 def _concatenation_operation_AFNe(left_er, right_er, depth):
-  return AFNe([], ['q0'], {}, 'q0', [])
+  concatenation_sigma = list(set(['E'] + left_er.Sigma + right_er.Sigma))
+  concatenation_q = list(set(left_er.Q + right_er.Q))
+  concatenation_delta = {
+    **left_er.delta,
+    **right_er.delta,
+    left_er.F[0]: [
+      ['E', right_er.q0]
+    ]
+  }
+  concatenation_q0 = left_er.q0
+  concatenation_f = [right_er.F[0]]
+
+  return AFNe(
+    concatenation_sigma,
+    concatenation_q,
+    concatenation_delta,
+    concatenation_q0,
+    concatenation_f
+  )
 
 def _successive_concatenation_operation_AFNe(er, depth):
   return AFNe([], ['q0'], {}, 'q0', [])
