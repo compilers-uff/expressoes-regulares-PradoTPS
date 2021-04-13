@@ -81,7 +81,32 @@ def _concatenation_operation_AFNe(left_er, right_er, depth):
   )
 
 def _successive_concatenation_operation_AFNe(er, depth):
-  return AFNe([], ['q0'], {}, 'q0', [])
+  current_initial_state = 'q0' + str(depth)
+  current_final_state = 'qf' + str(depth)
+
+  successive_concatenation_sigma = list(set(['E'] + er.Sigma))
+  successive_concatenation_q = list(set([current_initial_state, current_final_state] + er.Q))
+  successive_concatenation_delta = {
+    current_initial_state: [
+      ['E', er.q0],
+      ['E', current_final_state]
+    ],
+    er.F[0]: [
+      ['E', er.q0],
+      ['E', current_final_state]
+    ],
+    **er.delta
+  }
+  successive_concatenation_q0 = current_initial_state
+  successive_concatenation_f = [current_final_state]
+
+  return AFNe(
+    successive_concatenation_sigma,
+    successive_concatenation_q,
+    successive_concatenation_delta,
+    successive_concatenation_q0,
+    successive_concatenation_f
+  )
 
 def _erToAFNeRecursive(prefixed_er, depth):
   initial_state = 'q0' + str(depth)
