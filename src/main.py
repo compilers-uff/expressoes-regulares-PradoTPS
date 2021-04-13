@@ -6,31 +6,54 @@ from classes.ER import ER
 from functions.matcher import match
 
 def main():
-  afd = AFD(
-    ['a','b'],
+  # afd = AFD(
+  #   ['a','b'],
+  #   ['q0', 'q1', 'q2'],
+  #   {
+  #     'q0': [
+  #       ['a', 'q1'],
+  #       ['b', 'q2']
+  #     ],
+  #     'q1': [
+  #       ['a', 'q0'],
+  #       ['b', 'q2']
+  #     ],
+  #     'q2': [
+  #       ['a', 'q2'],
+  #       ['b', 'q2']
+  #     ]
+  #   },
+  #   'q0',
+  #   ['q2']
+  # )
+
+  afne = AFNe(
+    ['a','b', 'E'],
     ['q0', 'q1', 'q2'],
     {
       'q0': [
-        ['a', 'q1'],
-        ['b', 'q2']
+        ['a', 'q0'],
+        ['E', 'q1']
       ],
       'q1': [
-        ['a', 'q0'],
-        ['b', 'q2']
+        ['b', 'q1'],
+        ['E', 'q2']
       ],
       'q2': [
-        ['a', 'q2'],
-        ['b', 'q2']
+        ['a', 'q2']
       ]
     },
     'q0',
     ['q2']
   )
+  afn = afne.afneToAFN()
+  afn.print()
 
-  er = ER('+(*(a),b)')
-  er.print()
-  afne = er.erToAFNe()
-  afne.print()
-  afne.afneToAFN()
+  # er = ER('+(a,b)')
+  # er.print()
+  # afne = er.erToAFNe()
+  # afne.print()
+  # afn = afne.afneToAFN()
+  # afn.print()
 
 main()
