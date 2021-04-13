@@ -135,5 +135,10 @@ class ER:
   def __init__(self, prefixed_er):
     self.prefixed_er = prefixed_er
 
+  def print(self):
+    print('\n########## ER ##########')
+    print('Prefixed ER:', self.prefixed_er)
+    print('########################')
+
   def erToAFNe(self):
     return _erToAFNeRecursive(self.prefixed_er, 0)

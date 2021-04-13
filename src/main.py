@@ -28,6 +28,7 @@ def main():
   )
 
   er = ER('+(*(a),b)')
+  er.print()
   afne = er.erToAFNe()
   afne.print()
 

@@ -9,11 +9,13 @@ class AFNe:
     self.F = F
 
   def print(self):
+    print('\n######### AFNe #########')
     print('Sigma:', self.Sigma)
     print('Q:', self.Q)
     print('delta:', self.delta)
     print('q0:', self.q0)
     print('F:', self.F)
+    print('########################')
 
   @staticmethod
   def afneToAFN(er):

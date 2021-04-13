@@ -6,6 +6,15 @@ class AFD:
     self.q0 = q0
     self.F = F
 
+  def print(self):
+    print('\n######### AFD #########')
+    print('Sigma:', self.Sigma)
+    print('Q:', self.Q)
+    print('delta:', self.delta)
+    print('q0:', self.q0)
+    print('F:', self.F)
+    print('#########################')
+
   def accepted(self, word):
     word_list = list(word)
     current_state = self.q0
