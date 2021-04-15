@@ -48,5 +48,8 @@ def main():
   afne.print()
   afn = afne.to_AFN()
   afn.print()
+  afd = afn.to_AFD()
+  afd.print()
+  print(afd.accepted('a'))
 
 main()
