@@ -56,9 +56,10 @@ class AFD(Automaton):
     return self.F.count(current_state) > 0
   
   def _get_state_transition_for_symbol(self, state, symbol):
-    for path_symbol, path_state in self.delta[state]:
-      if (path_symbol == symbol):
-        return path_state
+    if (state in self.delta):
+      for path_symbol, path_state in self.delta[state]:
+        if (path_symbol == symbol):
+          return path_state
     
     return ''
 
