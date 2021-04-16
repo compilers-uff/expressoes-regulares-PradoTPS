@@ -2,7 +2,7 @@ import sys
 from src.functions.matcher import match
 
 def main():
-  if (len(sys.argv) < 1): raise Exception('Must pass params "-f file word" or "er word"')
+  if (len(sys.argv) < 3): raise Exception('Must pass params "-f file word" or "er word"')
 
   if (sys.argv[1] == '-f'):
     file_name = sys.argv[2]
