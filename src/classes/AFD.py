@@ -32,6 +32,5 @@ class AFD(Automaton):
 
     return self.F.count(current_state) > 0
 
-  @staticmethod
-  def to_min_AFD(afd):
-    return afd
+  def to_min_AFD(self):
+    return AFD(self.Sigma, self.Q, self.delta, self.q0, self.F)
