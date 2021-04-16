@@ -44,10 +44,11 @@ class AFN(Automaton):
           afd_q.append(new_state)
           compound_state_transitions_list.append([symbol, new_state])
 
-        afd_delta = {
-          **afd_delta,
-          compound_state: compound_state_transitions_list
-        }
+        if (len(compound_state_transitions_list) > 0): 
+          afd_delta = {
+            **afd_delta,
+            compound_state: compound_state_transitions_list
+          }
     
     for afd_state in afd_q:
       for final_afn_state in self.F:
