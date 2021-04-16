@@ -133,7 +133,7 @@ def _er_to_AFNe_recursive(prefixed_er, depth):
 
 class ER:
   def __init__(self, prefixed_er):
-    self.prefixed_er = prefixed_er
+    self.prefixed_er = prefixed_er.replace(' ', '')
 
   def print(self):
     print('\n########## ER ##########')

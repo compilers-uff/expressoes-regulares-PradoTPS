@@ -4,4 +4,7 @@ from ..classes.AFNe import AFNe
 from ..classes.ER import ER
 
 def match(er, word):
-  return ER(er).to_AFNe().to_AFN().to_AFD().to_min_AFD().accepted(word)
+  if ER(er).to_AFNe().to_AFN().to_AFD().to_min_AFD().accepted(word):
+    return 'OK'
+  else:
+    return 'Not OK'
