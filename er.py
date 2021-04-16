@@ -12,11 +12,11 @@ def main():
 
     for er in file:
       er = er.replace('\n','')
-      print("match(" + er + "," + word + ") == " + match(er, word))
+      print(f"match({er},{word}) == {match(er, word)}")
   else:
     er = sys.argv[1]
     word = sys.argv[2]
 
-    print("match(" + er + "," + word + ") == " + match(er, word))
+    print(f"match({er},{word}) == {match(er, word)}")
 
 main()
