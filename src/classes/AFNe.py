@@ -5,15 +5,6 @@ class AFNe(Automaton):
   def __init__(self, Sigma, Q, delta, q0, F):
     super().__init__(Sigma, Q, delta, q0, F)
 
-  def print(self):
-    print('\n######### AFNe #########')
-    print('Sigma:', self.Sigma)
-    print('Q:', self.Q)
-    print('delta:', self.delta)
-    print('q0:', self.q0)
-    print('F:', self.F)
-    print('########################')
-
   def _get_reachable_final_states(self, states):
     if (len(states) <= 0): return []
 

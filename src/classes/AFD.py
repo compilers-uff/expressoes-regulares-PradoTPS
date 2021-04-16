@@ -4,15 +4,6 @@ class AFD(Automaton):
   def __init__(self, Sigma, Q, delta, q0, F):
     super().__init__(Sigma, Q, delta, q0, F)
 
-  def print(self):
-    print('\n######### AFD #########')
-    print('Sigma:', self.Sigma)
-    print('Q:', self.Q)
-    print('delta:', self.delta)
-    print('q0:', self.q0)
-    print('F:', self.F)
-    print('#########################')
-
   def accepted(self, word):
     word_list = list(word)
     current_state = self.q0
