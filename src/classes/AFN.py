@@ -40,6 +40,8 @@ class AFN(Automaton):
             **afd_delta,
             compound_state: compound_state_transitions_list
           }
+
+    afd_q = list(set(afd_q))
     
     for afd_state in afd_q:
       for final_afn_state in self.F:
